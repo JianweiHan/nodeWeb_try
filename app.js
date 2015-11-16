@@ -9,10 +9,12 @@ app.set('port', (process.env.PORT || 5000));
 //configure app
 //use midddleware
 //define routes
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-	res.send('hello, express!');
-	//res.render('index');
+	//res.send('hello, express!');
+	res.render('pages/index');
 });
 
 // app.listen(1337, function(){

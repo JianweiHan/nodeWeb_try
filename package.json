@@ -1,11 +1,26 @@
 {
-	"name": "urlshortener",
-	"description": "Node.js URL shortener",
-	"version": "0.0.1",
-	"dependencies": {
-		"body-parser": "^1.7.0",
-		"express": "3.x",
-		"mysql": "*",
-		"request": "*"
-	}
+  "name": "nodeWeb_try",
+  "version": "0.1.5",
+  "description": "A sample Node.js app using Express 4",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JianweiHan/nodeWeb_try"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "SJSU"
 }

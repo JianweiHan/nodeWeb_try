@@ -1,13 +1,20 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 //var path = require('path');
+
+
+//configure app
 
 var app = express();
 app.set('port', (process.env.PORT || 5000));
 //app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('views', './views');
-//configure app
+
 //use midddleware
+
+app.use(bodyParser());
+
 //define routes
 // app.set('views', __dirname + '/views');
 // app.set('view engine', 'ejs');
@@ -21,8 +28,35 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+/*
 app.get('/', function(request, response) {
   response.render('pages/index');
+});
+*/
+
+var todoItems = [
+  {id: 1, desc: 'foo' },
+  {id: 2, desc: 'bar' },
+  {id: 3, desc: 'baz' }
+];
+
+app.get('/', function(request, response) {
+  response.render('pages/index',{
+	  title: "My App",
+	  items: todoItems
+  });
+});
+
+
+app.post('/add', function(req, res){
+	var newItem = req.body.newItem;
+	todoItems.push({
+		id: 0,
+		desc: newItem
+	});
+	
+	
+	res.redirect('/');
 });
 
 
